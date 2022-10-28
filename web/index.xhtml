@@ -9,6 +9,15 @@
     </h:head>
     <h:body>
         <h1>${msg['app.formulario']}</h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="#{msg['app.nombre']}" for="name"/>
+                <h:inputText value="#{contactoFormBean.name}" id="name"/>
+                <h:commandButton value="#{msg['app.saludo']}" />
+            </h:panelGrid>
+            <h:outputText value="#{contactoFormBean.saludo}"
+                          rendered="#{contactoFormBean.name ne null}"/>
+        </h:form>
     </h:body>
 </html>
 
