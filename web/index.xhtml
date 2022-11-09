@@ -18,6 +18,30 @@
             <h:outputText value="#{contactoFormBean.saludo}"
                           rendered="#{contactoFormBean.name ne null}"/>
         </h:form>
+        <h:form>
+            <li>#{msg.navegacion_implicita}
+                <ul>
+                    <li><h:commandLink value="#{msg.abrir_pagina_1_enlace}" action="pagina1" /></li>
+                </ul>
+            </li>
+        </h:form>
+        <h:form>
+            <li>#{msg.navegacion_definida_usuario}
+                <ul>
+                    <li><h:commandLink action="page1" value="#{msg.pagina1_enlace}" /></li>
+                    <li><h:commandLink action="page2" value="#{msg.pagina2_enlace}" /></li>
+                </ul>
+            </li>
+        </h:form>
+        <h:form>
+            <li>#{msg.navegacion_procesada}
+                <ul>
+                    <li>
+                        <h:commandLink value="#{msg.saludar}" action="#{navegacionBean.saludar}"/>
+                    </li>
+                </ul>
+            </li>
+        </h:form>
     </h:body>
 </html>
 
