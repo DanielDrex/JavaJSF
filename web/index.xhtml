@@ -42,6 +42,25 @@
                 </ul>
             </li>
         </h:form>
+        <h1>Formulario de prueba lifecycle</h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nombre" for="nombre"/>
+                <h:inputText  id="nombre" value="#{lifecycleBean.personaForm.nombre}" />
+                <h:outputLabel value="Correo electrónico" for="email"/>
+                <h:inputText  id="email" value="#{lifecycleBean.personaForm.correoElectronico}" >
+                    <f:validator validatorId="emailValidator"/>
+                </h:inputText>
+                <h:outputLabel value="Sexo" />
+                <h:panelGroup layout="block">
+                    <h:selectOneRadio value="#{lifecycleBean.personaForm.sexo}">
+                        <f:selectItem itemLabel="Hombre" itemValue="H" />
+                        <f:selectItem itemLabel="Mujer" itemValue="M" />
+                    </h:selectOneRadio>
+                </h:panelGroup> 
+            </h:panelGrid>
+            <h:commandButton action="result" value="Enviar" />
+        </h:form>
     </h:body>
 </html>
 
